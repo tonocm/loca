@@ -31,7 +31,7 @@ module LabExternal
     end
     obj_dir = Dir.entries(".").find {|i| i.match /^obj/}
     raise "Object file directory not found" if obj_dir == nil
-    obj = File.join( tooldir, FootprintTool, obj_dir, "dual_fp_all.so" )
+    obj = File.join( tooldir, FootprintTool, obj_dir, "dual_fp_all.dylib" ) #Before mod: dual_fp_all.so
     #obj = File.join( tooldir, FootprintTool, obj_dir, "linear_fp.so" )
     raise "Object file #{obj} not found" unless File.file?(obj)
     Labenv.env[:footprint_obj] = obj

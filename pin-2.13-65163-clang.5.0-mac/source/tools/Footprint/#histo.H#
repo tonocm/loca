@@ -118,8 +118,7 @@ namespace histo
 	}
 #elif defined (__x86_64__) &&  defined (__GNUC__)
 	__asm__ (
-           // "rex.w bsr %1, %0;" <- original
-      "bsr %1, %0;"
+           "rex.w bsr %1, %0;"
 	    : "=r"(msb)
 	    : "m"(value)
 	    : "eax"
